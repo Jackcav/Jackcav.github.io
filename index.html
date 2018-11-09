@@ -11,3 +11,20 @@
 	</a-scene>
 </body>
 </html>
+
+
+ <script type="text/javascript" src="Three.js"></script>
+    ...
+    <script type="text/javascript">
+        ...
+        // load ascii model
+        var jsonLoader = new THREE.JSONLoader();
+        jsonLoader.load( "drone.js", function( geometry ) { createScene( geometry ) } );
+        // load binary model
+        var binLoader = new THREE.BinaryLoader();
+        binLoader.load( "drone.js", function( geometry ) { createScene( geometry) } );
+        function createScene( geometry ) {
+            var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial() );
+        
+        ...
+    </script>
