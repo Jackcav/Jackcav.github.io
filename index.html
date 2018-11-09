@@ -6,25 +6,17 @@
 <script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeettienne/ar.js/master/three.js/' </script>
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded artoolkit='sourceType: webcam;'>
-		<a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+	<div><script>
+	var loader = new THREE.ColladaLoader();
+    loader.load('drone.js', function(result) {
+      result.scene.rotation = new THREE.Vector3(-Math.PI / 2, 0, -Math.PI / 2);
+      theDrone = new Drone(result.scene);
+      theScene.add(theDrone);
+      $('#status').html('');
+    });
+</script></div>
 		<a-marker-camera preset='hiro'></a-marker-camera>
 	</a-scene>
 </body>
 </html>
 
-
- <script type="text/javascript" src="Three.js"></script>
-    ...
-    <script type="text/javascript">
-        ...
-        // load ascii model
-        var jsonLoader = new THREE.JSONLoader();
-        jsonLoader.load( "drone.js", function( geometry ) { createScene( geometry ) } );
-        // load binary model
-        var binLoader = new THREE.BinaryLoader();
-        binLoader.load( "drone.js", function( geometry ) { createScene( geometry) } );
-        function createScene( geometry ) {
-            var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial() );
-        
-        ...
-    </script>
