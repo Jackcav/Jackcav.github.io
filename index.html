@@ -6,16 +6,8 @@
 <script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeettienne/ar.js/master/three.js/' </script>
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded artoolkit='sourceType: webcam;'>
-	<div><script>
-	var loader = new THREE.ColladaLoader();
-    loader.load('drone.js', function(result) {
-      result.scene.rotation = new THREE.Vector3(-Math.PI / 2, 0, -Math.PI / 2);
-      theDrone = new Drone(result.scene);
-      theScene.add(theDrone);
-      $('#status').html('');
-    });
-</script></div>
-		<a-marker-camera preset='hiro'></a-marker-camera>
+	<a-box position='0 0.5 0' material='opacity: 0.5;''></a-box>
+	<a-marker-camera preset='hiro'></a-marker-camera>
 	</a-scene>
 </body>
 </html>
