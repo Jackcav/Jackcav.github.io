@@ -7,8 +7,15 @@
 <script>THREEx.ArToolkitContext.baseURL = "https://rawgit.com/jeromeettienne/ar.js/master/three.js/"" </script>
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded artoolkit='sourceType: webcam;'>
-		<a-entity json-model = ”src: 'drone.js';” >
-		</a-entity>
+		<script>
+		var loader = new THREE.JSONLoader();
+
+		loader.load("drone.js", function(geometry, materials) {
+		material = new THREE.MultiMaterial(materials);
+		mesh = new Three.Mesh(geometry,material);
+		scene.add(mesh);
+		});
+		</script>
 		<a-marker-camera preset='hiro'></a-marker-camera>
 	</a-scene>
 </body>
