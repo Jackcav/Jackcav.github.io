@@ -3,6 +3,7 @@
 <!-- three.js library -->
 <script src='https://jeromeetienne.github.io/AR.js/three.js/examples/vendor/three.js/build/three.min.js'></script>
 <script src="https://jeromeetienne.github.io/AR.js/three.js/examples/vendor/three.js/examples/js/libs/stats.min.js"></script>
+<script src='https://jeromeetienne.github.io/AR.js/three.js/examples/vendor/three.js/examples/js/loaders/OBJLoader.js'></script>
 <!-- ar.js -->
 <script src="https://jeromeetienne.github.io/AR.js/three.js/build/ar.js"></script>
 <script>THREEx.ArToolkitContext.baseURL = 'https://jeromeetienne.github.io/AR.js/three.js/'</script>
@@ -58,7 +59,7 @@
 	})
 
 	arToolkitSource.init(function onReady(){
-		onResizElement()
+		onResizeElement()
 	})
 	
 	// handle resize
