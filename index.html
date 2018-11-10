@@ -145,12 +145,13 @@
 			
 			loader.load( 'drone.obj', function ( group ) {
 				mesh0 = group.children[0];
+				mesh0.material = new THREE.MeshNormalMaterial();
 				mesh0.material.side = THREE.DoubleSide;
 				mesh0.position.y = 0.25;
 				mesh0.scale.set(0.5,0.5,0.5);
 				arWorldRoot.add(mesh0);
 			}, onProgress, onError );
-			
+
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
 	//////////////////////////////////////////////////////////////////////////////////
