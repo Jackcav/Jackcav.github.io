@@ -144,7 +144,7 @@
 	var loader = new THREE.OBJLoader();
 			
 			loader.load( 'AR_Drone.obj', function ( group ) {
-				mesh0 = group.children[0];
+				mesh0 = group.children[1];
 				mesh0.material = new THREE.MeshNormalMaterial();
 				mesh0.material.side = THREE.DoubleSide;
 				mesh0.position.y = 0.25;
