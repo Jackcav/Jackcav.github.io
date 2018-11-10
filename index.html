@@ -58,7 +58,7 @@
 	})
 
 	arToolkitSource.init(function onReady(){
-		onResize()
+		onResizElement()
 	})
 	
 	// handle resize
@@ -66,10 +66,10 @@
 		onResize()
 	})
 	function onResize(){
-		arToolkitSource.onResize()	
-		arToolkitSource.copySizeTo(renderer.domElement)	
+		arToolkitSource.onResizeElement()	
+		arToolkitSource.copyElementSizeTo(renderer.domElement)	
 		if( arToolkitContext.arController !== null ){
-			arToolkitSource.copySizeTo(arToolkitContext.arController.canvas)	
+			arToolkitSource.copyElementSizeTo(arToolkitContext.arController.canvas)	
 		}	
 	}
 	////////////////////////////////////////////////////////////////////////////////
@@ -140,14 +140,13 @@
 	function onProgress(xhr) { console.log( (xhr.loaded / xhr.total * 100) + '% loaded' ); }
 	function onError(xhr) { console.log( 'An error happened' ); }
 	
-	var loader = new THREE.OBJLoader()
-			.setMaterials( materials )
-			.setPath( '/' )
-			.load( 'drone.obj', function ( group ) {
+	var loader = new THREE.OBJLoader();
+			loader.setMaterials( materials )
+			loader.load( 'drone.obj', function ( group ) {
 				mesh0 = group.children[0];
 				mesh0.material.side = THREE.DoubleSide;
 				mesh0.position.y = 0.25;
-				mesh0.scale.set(0.25,0.25,0.25);
+				mesh0.scale.set(0.5,0.5,0.5);
 				arWorldRoot.add(mesh0);
 			}, onProgress, onError );
 	//////////////////////////////////////////////////////////////////////////////////
