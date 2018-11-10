@@ -126,28 +126,13 @@
 	//		add an object in the scene
 	//////////////////////////////////////////////////////////////////////////////////
 
-	var arWorldRoot = smoothedRoot
+	var loader = new THREE>JSONLoader();
 
-	// add a torus knot	
-	var geometry	= new THREE.CubeGeometry(1,1,1);
-	var material	= new THREE.MeshNormalMaterial({
-		transparent : true,
-		opacity: 0.5,
-		side: THREE.DoubleSide
-	}); 
-	var mesh	= new THREE.Mesh( geometry, material );
-	mesh.position.y	= geometry.parameters.height/2
-	arWorldRoot.add( mesh );
-	
-	var geometry	= new THREE.TorusKnotGeometry(0.3,0.1,64,16);
-	var material	= new THREE.MeshNormalMaterial(); 
-	var mesh	= new THREE.Mesh( geometry, material );
-	mesh.position.y	= 0.5
-	arWorldRoot.add( mesh );
-	
-	onRenderFcts.push(function(){
-		mesh.rotation.x += 0.1
-	})
+	loader.load("drone.js", function(geometry, materials) {
+		material = new THREE.MultiMaterial(materials);
+		mesh = new Three.Mesh(geometry,material);
+		scene.add(mesh);
+	});
 
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
