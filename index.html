@@ -140,7 +140,7 @@
 	function onProgress(xhr) { console.log( (xhr.loaded / xhr.total * 100) + '% loaded' ); }
 	function onError(xhr) { console.log( 'An error happened' ); }
 	
-		new THREE.OBJLoader()
+	var loader = new THREE.OBJLoader()
 			.setMaterials( materials )
 			.setPath( '/' )
 			.load( 'drone.obj', function ( group ) {
