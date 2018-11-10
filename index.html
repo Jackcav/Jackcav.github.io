@@ -126,7 +126,7 @@
 	//		add an object in the scene
 	//////////////////////////////////////////////////////////////////////////////////
 	var arWorldRoot = smoothedRoot
-	
+
 	var geometry	= new THREE.CubeGeometry(1,1,1);
 	var material	= new THREE.MeshNormalMaterial({
 		transparent : true,
@@ -137,6 +137,9 @@
 	mesh.position.y	= geometry.parameters.height/2
 	arWorldRoot.add( mesh );
 
+	var loader = new THREE.OBJLoader();
+
+	loader.load('drone.obj', function(object){arWorldRoot.add(object);});
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
 	//////////////////////////////////////////////////////////////////////////////////
