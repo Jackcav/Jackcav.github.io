@@ -149,6 +149,10 @@
 				arWorldRoot.add(mesh0);
 			}, onProgress, onError );
 		});
+
+	var light = new THREE.DirectionalLight( 0xffffff );
+		light.position.set( 0, 1, 1 ).normalize();
+		scene.add(light);
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
 	//////////////////////////////////////////////////////////////////////////////////
