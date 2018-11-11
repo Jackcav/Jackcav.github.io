@@ -135,12 +135,13 @@
 	var mtl_loader = new THREE.MTLLoader()
 	var obj_loader = new THREE.OBJLoader();
 		
-		mtl_loader.load('Drone.mtl', function (materials) {
+		mtl_loader.load('Drone_ar_onemesh.mtl', function (materials) {
 			materials.preload();
 
 			obj_loader.setMaterials(materials)
-			obj_loader.load( 'Drone.obj', function ( group ) {
+			obj_loader.load( 'Drone_ar_onemesh.obj', function ( group ) {
 				mesh0 = group.children[0];
+				mesh0.material = new THREE.MeshPhongMaterial({Color: 0x8b9296} );
 				mesh0.material.side = THREE.DoubleSide;
 				mesh0.position.y = 0;
 				mesh0.rotation.x = Math.PI * 3 / 2;
