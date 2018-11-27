@@ -135,11 +135,11 @@
 	var mtl_loader = new THREE.MTLLoader()
 	var obj_loader = new THREE.OBJLoader();
 		
-		mtl_loader.load('Drone_ar_onemesh.mtl', function (materials) {
+		mtl_loader.load('Body with Propellers.mtl', function (materials) {
 			materials.preload();
 
 			//obj_loader.setMaterials(materials)
-			obj_loader.load( 'Drone_ar_onemesh.obj', function ( group ) {
+			obj_loader.load( 'Body with Propellers.obj', function ( group ) {
 				mesh0 = group.children[0];
 				mesh0.material = new THREE.MeshPhongMaterial({color: 0xbdc3c7} );
 				mesh0.material.side = THREE.DoubleSide;
