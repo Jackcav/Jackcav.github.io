@@ -137,7 +137,7 @@
 		
 		mtl_loader.load('Mk2_single.mtl', function (materials) {
 			materials.preload();
-			obj_loader.setMaterials(materials):
+			obj_loader.setMaterials(materials);
 			obj_loader.load( 'Mk2_single.obj', function ( object ) {
 				//mesh0 = group.children[0];
 				object.material.side = THREE.DoubleSide;
