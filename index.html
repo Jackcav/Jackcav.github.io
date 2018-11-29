@@ -135,10 +135,10 @@
 	var mtl_loader = new THREE.MTLLoader()
 	var obj_loader = new THREE.OBJLoader();
 		
-		mtl_loader.load('Mk2_single.mtl', function (materials) {
+		mtl_loader.load('gold_leg.mtl', function (materials) {
 			materials.preload();
 			obj_loader.setMaterials(materials);
-			obj_loader.load( 'Mk2_single.obj', function ( object ) {
+			obj_loader.load( 'gold_leg.obj', function ( object ) {
 				//mesh0 = group.children[0];
 				//object.material.side = THREE.DoubleSide;
 				object.position.y = 0;
